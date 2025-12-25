@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4a90e2">
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icons/icon-192.png">
+    
+    <!-- iOS Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    
+    <title><%= title %> - <%= appName %></title>
+    
+    <!-- Styles -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <!-- PWA Script -->
+    <script src="/javascripts/pwa.js" defer></script>
+    
+    <!-- Inline Styles pour PWA -->
+    <style>
+      /* Loading screen */
+      .pwa-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #4a90e2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.3s;
+      }
+      
+      /* Installation banner */
+      .install-banner {
+        background: #4a90e2;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        display: none;
+      }
+      
+      .install-btn {
+        background: white;
+        color: #4a90e2;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Installation Banner -->
+    <div class="install-banner" id="installBanner">
+      Installer cette application sur votre téléphone
+      <button class="install-btn" id="installBtn">Installer</button>
+    </div>
+    
+    <!-- Loading Screen -->
+    <div class="pwa-loading" id="loadingScreen">
+      <div style="color: white; text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 10px;">📱</div>
+        <div>Chargement...</div>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div id="appContent">
+      <%- include('partials/header') if hasPartial %>
+      
+      <main>
+        <%- body %>
+      </main>
+      
+      <%- include('partials/footer') if hasPartial %>
+    </div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      // Masquer le loading screen
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loadingScreen = document.getElementById('loadingScreen');
+          loadingScreen.style.opacity = '0';
+          setTimeout(function() {
+            loadingScreen.style.display = 'none';
+          }, 300);
+        }, 500);
+        
+        // Enregistrer le Service Worker
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/javascripts/service-worker.js')
+            .then(function(registration) {
+              console.log('Service Worker enregistré avec succès:', registration.scope);
+            })
+            .catch(function(error) {
+              console.log('Échec d\'enregistrement du Service Worker:', error);
+            });
+        }
+      });
+      
+      // Gérer l'installation PWA
+      let deferredPrompt;
+      
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Afficher le banner d'installation
+        var installBanner = document.getElementById('installBanner');
+        installBanner.style.display = 'block';
+        
+        document.getElementById('installBtn').addEventListener('click', function() {
+          installBanner.style.display = 'none';
+          deferredPrompt.prompt();
+          
+          deferredPrompt.userChoice.then(function(choiceResult) {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('Utilisateur a installé la PWA');
+            }
+            deferredPrompt = null;
+          });
+        });
+      });
+      
+      // Cacher le banner si déjà installé
+      if (window.matchMedia('(display-mode: standalone)').matches) {
+        document.getElementById('installBanner').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

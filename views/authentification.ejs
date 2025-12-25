@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/authentification.css' />
+    <link rel="icon" href="/icons/48x48.png" type="image/png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mon PWA">
+    <link rel="apple-touch-icon" href="/icons/192x192.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+     <nav>
+	<div style="background: url(/icons/192x192.png) no-repeat"></div>
+	<h3>Book up's</h3>
+     </nav>
+     <center>
+     	<form>
+     		<h3>SIGN UP</h3>
+     		<hr>
+     		<label>Email</label>
+     		<span>
+     			<input type="mail" required>
+     			<i class='bx bx-envelope' style="color:black;margin-left:-25px;"></i>   
+     		</span>
+     		<label>Phone</label>
+     		<span>
+     			<input type="text" required>
+     			<i class='bx bxs-phone' style="color:black;margin-left:-25px;"></i>   
+     		</span>
+     		<label>Password</label>
+     		<span>
+     			<input type="password" required>
+     			<i class='bx bxs-key' style="color:black;margin-left:-25px;"></i>   
+     		</span>
+     		<label>Confirm password</label>
+     		<span>
+     			<input type="password" required>
+     			<i class='bx bxs-key' style="color:black;margin-left:-25px;"></i>   
+     		</span>
+     		<label>Role</label>
+     		<span style="display:flex;flex-direction:row;justify-content:center;text-align:center;">
+     			<p>Teacher</p>
+     			<input type="radio" required name="role" value="Teacher">
+     			<p>Parent</p>
+     			<input type="radio" required name="role" value="Parent">
+     			  
+     		</span>
+     		<input type="submit" value="">   		
+     	</form>
+     </center>
+      
+</html>
