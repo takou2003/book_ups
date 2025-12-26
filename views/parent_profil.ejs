@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/parent_profil.css'/>
+    <link rel="icon" href="/icons/48x48.png" type="image/png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mon PWA">
+    <link rel="apple-touch-icon" href="/icons/192x192.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+     <nav>
+	<div style="background: url(/icons/192x192.png) no-repeat"></div>
+	<h3>Book up's</h3>
+	<div class="setting" id="setting">
+		<i class='bx bxs-user' style="color:black;font-size:30px;margin-top:5px;"></i>
+	</div>
+     </nav>
+     <div class="manipulation" id="other">
+     	<span>
+     		<i class='bx bx-info-circle' style=""></i>
+     		<p>infos</p>
+     	</span>
+     	<span>
+     		<i class='bx bxs-home' style=""></i>
+     		<p>setting2</p>
+     	</span>
+     	<span>
+     		<i class='bx bxs-home' style=""></i>
+     		<p>setting3</p>
+     	</span>
+     	<span>
+     		<i class='bx bx-world' style=""></i>
+     		<p>languages</p>
+     	</span>
+     </div>
+     <section class="displaying">
+     	<section class="menu " id="sect1"></section>
+     	<section class="menu active" id="sect2">
+     		<span>
+     			<div class="sm_ " id="new">
+     				<i class='bx bx-plus-circle'></i>
+     				<p>new request</p>
+     			</div>
+     			<div class="sm_ active" id="statut">
+     				<i class='bx bx-time'></i>
+     				<p>statuts</p>
+     			</div>
+     		</span>
+     		<section class="section_principal">
+     			<section class="section_a " id="section_a1"></section>
+     			<section class="section_a active" id="section_a2"></section>
+     		</section>
+     	</section>
+     	<section class="menu " id="sect3"></section>
+     </section>
+     
+     <footer>
+     	<span id="home" class="sp ">
+     		<i class='bx bxs-home' style=""></i>
+     		<p style="">Home</p>
+     	</span>
+     	<span id="request"  class="sp active">
+     		<i class='bx bxs-paper-plane' style=""></i>
+     		<p>Request</p>
+     	</span>
+     	<span id="teacher"  class="sp">
+     		<i class='bx bxs-user-badge' style=""></i>
+     		<p>Teacher</p>
+     	</span>
+     </footer>
+  </body>
+  <script src="/javascripts/parent_profil.js"></script>
+</html>

@@ -9,5 +9,8 @@ router.get('/', function(req, res, next) {
 router.get('/Authentification', function(req, res, next) {
   res.render('authentification', { title: 'Authentification' });
 });
+router.get('/Parent', function(req, res, next) {
+  res.render('parent_profil', { title: 'Parent' });
+});
 
 module.exports = router;

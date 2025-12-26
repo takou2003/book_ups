@@ -1,0 +1,183 @@
+nav{
+	width:100vw;
+	height:9vh;
+	background-color:transparent;
+	position:absolute;
+	left:0px;
+	top:0px;
+	display:flex;
+	flex-direction:row;
+}
+.manipulation{
+	width:60vw;
+	height:250px;
+	background-color:dodgerblue;
+	margin-top:10vh;
+	transition: transform 0.3s ease;
+	transform: translateX(-100%);
+	z-index: 1000;
+	position: absolute;
+        left: 0;
+        display:flex;
+        flex-direction:column;
+}
+.manipulation span{
+	display:flex;
+	flex-direction:row;
+	cursor:pointer;
+	margin:5px;
+	height:47px;
+}
+.manipulation span i{
+	font-size:25px;
+	margin:10px;
+	color:white;
+}
+.manipulation span p{
+	font: 1.1rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	color:white;
+	font-weight:bold;
+}
+.manipulation.active {
+    transform: translateX(0);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+.displaying{
+	width:100vw;
+	height:78vh;
+	background-color:whitesmoke;
+	position:relative;
+	left:-8px;
+	top:10vh;
+	display:flex;
+}
+.displaying .menu{
+	display:none;
+}
+.displaying .menu.active{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	height:100%;
+}
+.displaying #sect1{
+	background-color:gray;
+}
+.displaying #sect2{
+	justify-content:center;
+	background-color:white;
+}
+.displaying #sect2 .section_principal{
+	width:100%;
+	height:90%;
+	background-color:gray;
+}
+.displaying #sect2 .section_principal .section_a{
+	display:none;
+}
+.displaying #sect2 .section_principal .section_a.active{
+	display:flex;
+	width:100%;
+	height:100%;
+}
+.displaying #sect2 .section_principal #section_a1{
+	background-color:black;
+}
+.displaying #sect2 .section_principal #section_a2{
+	background-color:white;
+}
+.displaying #sect2 span{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+.displaying #sect2 span div{
+	width:160px;
+	height:45px;
+	background-color:dodgerblue;
+	margin:5px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	text-align:center;
+}
+.displaying #sect2 span div i{
+	position:relative;
+	top:10px;
+	font-size:25px;
+	color:white;
+}
+.displaying #sect2 span .sm_.active{
+	background-color:purple;
+}
+.displaying #sect2 span div p{
+	font: 1.0rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	color:white;
+	font-weight:bold;
+}
+.displaying #sect3{
+	background-color:whitesmoke;
+}
+footer{
+	width:100vw;
+	height:10vh;
+	background-color:transparent;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+footer span{
+	display:flex;
+	flex-direction:column;
+	margin:25px;
+	justify-content:center;
+	text-align:center;
+	cursor:pointer;
+}
+footer span p{
+	margin-top:0px;
+	margin-left:0;
+	font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	color:dodgerblue;
+	font-weight:bold;
+}
+footer span i{
+	font-size:25px;
+	color:dodgerblue;
+}
+footer .sp.active p{
+	color:purple;
+}
+footer .sp.active i{
+	color:purple;
+}
+nav div{
+	width:55px;
+	height:55px;
+	border-radius:28px;
+	background-color:whitesmoke;
+	background-size: cover !important;
+        background-position: center !important;
+	position:relative;
+	margin:7px;
+}
+nav .setting{
+	width:45px;
+	height:45px;
+	position:absolute;
+	right:20px;
+	top:5px;
+	justify-content:center;
+	text-align:center;
+}
+nav h3{
+	font: 1.4rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	color:skyblue;
+}
+form h3{
+	color:dodgerblue;
+}

@@ -20,37 +20,81 @@
      <center>
      	<form>
      		<h3>SIGN UP</h3>
-     		<hr>
      		<label>Email</label>
      		<span>
-     			<input type="mail" required>
-     			<i class='bx bx-envelope' style="color:black;margin-left:-25px;"></i>   
+     			<input type="mail" required placeholder="example@gmail.com">
+     			<i class='bx bx-envelope' style="color:dodgerblue;margin-left:-25px;"></i>   
      		</span>
      		<label>Phone</label>
      		<span>
-     			<input type="text" required>
-     			<i class='bx bxs-phone' style="color:black;margin-left:-25px;"></i>   
+     			<input type="text" required placeholder="+237 xxxx xxxx">
+     			<i class='bx bxs-phone' style="color:dodgerblue;margin-left:-25px;"></i>   
      		</span>
      		<label>Password</label>
      		<span>
-     			<input type="password" required>
-     			<i class='bx bxs-key' style="color:black;margin-left:-25px;"></i>   
+     			<input type="password" required id="passwordInput" placeholder="enter password">
+     			<i class='bx bxs-low-vision' style="color:dodgerblue;margin-left:-25px;" id="togglePassword"></i>   
      		</span>
      		<label>Confirm password</label>
      		<span>
-     			<input type="password" required>
-     			<i class='bx bxs-key' style="color:black;margin-left:-25px;"></i>   
+     			<input type="password" required id="passwordInput2" placeholder="repeat password">
+     			<i class='bx bxs-low-vision' style="color:dodgerblue;margin-left:-25px;" id="togglePassword2"></i>   
      		</span>
      		<label>Role</label>
-     		<span style="display:flex;flex-direction:row;justify-content:center;text-align:center;">
-     			<p>Teacher</p>
+     		<span style="display:flex;flex-direction:row;justify-content:center;text-align:center;margin:5px;margin-top:-5px;">
+     			<p style="margin-top:7px;font-family:Arial;color:white;font-weight:bold;">Teacher</p>
      			<input type="radio" required name="role" value="Teacher">
-     			<p>Parent</p>
+     			<p style="margin-top:7px;font-family:Arial;color:white;font-weight:bold;">Parent</p>
      			<input type="radio" required name="role" value="Parent">
      			  
      		</span>
-     		<input type="submit" value="">   		
+     		<center>
+     			<input type="submit" value="create account"> 
+     		</center>  		
      	</form>
      </center>
-      
+ </body>
+ <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('passwordInput');
+    const togglePassword2 = document.getElementById('togglePassword2');
+    const passwordInput2 = document.getElementById('passwordInput2');
+    
+    togglePassword.addEventListener('click', function() {
+        // Basculer entre password et text
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Changer l'icône
+        if (type === 'text') {
+            // Mot de passe visible - œil normal
+            togglePassword.classList.remove('bxs-low-vision');
+            togglePassword.classList.add('bx-show'); // Icône œil ouvert
+        } else {
+            // Mot de passe masqué - œil barré
+            togglePassword.classList.remove('bx-show');
+            togglePassword.classList.add('bxs-low-vision');
+        }
+    });
+    togglePassword2.addEventListener('click', function() {
+        // Basculer entre password et text
+        const type = passwordInput2.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput2.setAttribute('type', type);
+        
+        // Changer l'icône
+        if (type === 'text') {
+            // Mot de passe visible - œil normal
+            togglePassword2.classList.remove('bxs-low-vision');
+            togglePassword2.classList.add('bx-show'); // Icône œil ouvert
+        } else {
+            // Mot de passe masqué - œil barré
+            togglePassword2.classList.remove('bx-show');
+            togglePassword2.classList.add('bxs-low-vision');
+        }
+    });
+});
+ </script>
 </html>
+
