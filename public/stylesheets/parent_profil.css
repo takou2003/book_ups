@@ -81,10 +81,67 @@ nav{
 	height:100%;
 }
 .displaying #sect2 .section_principal #section_a1{
-	background-color:black;
+	background-color:white;
+	justify-content:center;
+	
+}
+.displaying #sect2 .section_principal #section_a1 form{
+
+	width:90%;
+	max-width:500px;
+	height:300px;
+	margin-top:20px;
+	text-align:left;
+}
+.displaying #sect2 .section_principal #section_a1 form label{
+	font: 1.3rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	
 }
 .displaying #sect2 .section_principal #section_a2{
 	background-color:white;
+	overflow-y: auto;
+    	overflow-x: hidden;
+        flex-direction: column;
+}
+.displaying #sect2 .section_principal #section_a2 div{
+	width:100%;
+	height:60px;
+	background-color:white;
+	position:relative;
+	flex-shrink: 0;
+	top:5px;
+	margin-top:5px;
+	display:flex;
+	flex-direction:row;
+}
+.displaying #sect2 .section_principal #section_a2 div:hover{
+	background-color:whitesmoke;
+}
+.displaying #sect2 .section_principal #section_a2 div div{
+	width:50px;
+	height:50px;
+	background-color:gray;
+	border-radius:25px;
+	margin-top:0px;
+	margin-left:5px;
+}
+.displaying #sect2 .section_principal #section_a2 div span{
+	display:flex;
+	flex-direction:column
+}
+.displaying #sect2 .section_principal #section_a2 div span p{
+	margin:5px;
+	margin-left:25px;
+	font-family:"Lucida Grande", Helvetica, Arial, sans-serif;
+	margin-top:3px;
+}
+.displaying #sect2 .section_principal #section_a2 div span div{
+	width:85px;
+	height:35px;
+	background-color:dodgerblue;
+	border-radius:0px;
+	margin-top:-10px;
 }
 .displaying #sect2 span{
 	display:flex;
@@ -114,6 +171,7 @@ nav{
 	font: 1.0rem "Lucida Grande", Helvetica, Arial, sans-serif;
 	color:white;
 	font-weight:bold;
+	margin-top:15px;
 }
 .displaying #sect3{
 	background-color:whitesmoke;
