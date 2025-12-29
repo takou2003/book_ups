@@ -52,6 +52,13 @@ form input{
 	outline:none;
 	font-size:16px;
 	border:none;
+	background-color:transparent;
+	border-bottom:1px solid white;
+	color:white;
+}
+form i{
+	color:white;
+	margin-left:-25px;
 }
 /* CSS */
 input[type="radio"] {
