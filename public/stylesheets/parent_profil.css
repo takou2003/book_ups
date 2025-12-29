@@ -18,7 +18,6 @@ html {
 	width:300px;
 	height:450px;
 	background-color:white;
-	margin-top:10vh;
 	transition: transform 0.3s ease;
 	transform: translateX(-100%);
 	z-index: 1000;
@@ -27,6 +26,7 @@ html {
         display:flex;
         flex-direction:column;
         max-width:300px;
+        top:90px;
 }
 .manipulation .profil{
 	width:100%;
@@ -87,23 +87,91 @@ html {
 .repetitor{
 	width:95%;
 	max-width:600px;
-	height:400px;
-	background-color:white;
+	height:auto;
+	background-color:transparent;
 	margin-top:100px;
 	
 }
 .repetitor .header_option{
 	width:100%;
 	height:50px;
-	background-color:gray;
 	display:flex;
 	flex-direction:row;
+	background-color:transparent;
+}
+.repetitor .list{
+	width:100%;
+	height:60px;
+	display:flex;
+	flex-direction:column;
+	border-bottom:2px solid white;
+	position:relative;
+	top:17px;
+	margin-top:10px;
+}
+.repetitor .list .name{
+	text-align:left;
+	margin-top:5px;
+	font-size:21px;
+	color:#0051A2;
+	margin-left:5px;
+}
+.repetitor .list span{
+	display:flex;
+	flex-direction:row;
+
+	margin-top:-30px;
+}
+.repetitor .list span i{
+	margin-top:17px;
+}
+.repetitor .list span .quart{
+	color:#0051A2;
+}
+.repetitor .header_option i{
+	color:#0051A2;
+	font-size:25px;
+}
+.repetitor .header_option h3{
+	color:#0051A2;
+	font-size:1.3rem;
+}
+.new{
+	width:250px;
+	height:50px;
+	background-color:#0051A2;
+	margin-top:60px;
+	display:flex;
+	flex-direction:row;
+	cursor:pointer;
+}
+.new div{
+	width:38px;
+	height:38px;
+	background-color:white;
+	border-radius:20px;
+	margin:5px;
+	text-align:center;
+	justify-content:center;
+	text-align:center;
+}
+.new div i{
+	font-size:35px;
+	margin-top:1px;
+	color:#0051A2;
+}
+.new h3{
+	color:white;
+	margin:0px;
+	font-weight:normal;
+	margin-top:15px;
+	margin-left:15px;
 }
 nav div{
 	width:55px;
 	height:55px;
 	border-radius:28px;
-	background-color:whitesmoke;
+	background-color:transparent;
 	background-size: cover !important;
         background-position: center !important;
 	position:relative;
