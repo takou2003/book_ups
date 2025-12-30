@@ -12,5 +12,7 @@ router.get('/Authentification', function(req, res, next) {
 router.get('/Parent', function(req, res, next) {
   res.render('parent_profil', { title: 'Parent' });
 });
-
+router.get('/view_teacher', function(req, res, next) {
+  res.render('view_teacher', { title: 'Proximity' });
+});
 module.exports = router;
