@@ -50,78 +50,74 @@ nav h3{
 .repetitor{
 	width:95%;
 	max-width:600px;
-	height:400px;
+	height:370px;
 	background-color:transparent;
 	margin-top:80px;
+	display:flex;
+	flex-direction:row;
+	overflow-y: hidden;
+    	overflow-x: auto;
+    	scrollbar-width: none; /* Firefox */
+    	-ms-overflow-style: none; /* IE et Edge */
 }
 .repetitor div{
-	width:150px;
-	height:180px;
+	width:250px;
+	height:330px;
 	background-color:white;
-	display:inline-block;
 	position:relative;
-	top:10px;
+	top:15px;
+	flex-shrink: 0;
+	margin-left:15px;
 	border-radius:5px;
-	margin-top:5px;
-	margin-left:3px;
 }
 .repetitor div .picture{
 	width:100%;
-	height:95px;
-	background-color:gray;
-	background-size: cover !important;
-        background-position: center !important;
+	height:160px;
+	background-color:whitesmoke;
 	position:relative;
-	top:-5px;
-	border-bottom-left-radius:0;
-	border-bottom-right-radius:0;
+	top:0px;
+	background-size:cover !important;
+	background-position:center !important;
 	margin-left:0px;
 }
-.repetitor div .p1{
-	font-weight:530;
-	color:#0051A2;
-	margin:0px;
-	float:left;
-	margin-left:2px;
+.repetitor div h3{
 	font-size:0.9rem;
-}
-.repetitor div .p2{
-	font-size:0.8rem;
-	margin-left:3px;
-	float:left;
-	margin-top:4px;
-}
-.repetitor div .tarif{
-	width:100%;
-	height:25px;
-	background-color:transparent;
-	position:relative;
-	top:-15px;
-	display:flex;
-	flex-direction:row;
-	margin-left:2px;
-}
-.repetitor div .tarif p{
-	font-size:12px;
-	margin:0;
-	margin-top:7px;
-}
-.repetitor div .tarif i{
-	margin-top:5px;
-	color:orange;
-	margin-left:5px;
+	position:absolute;
+	top:150px;
+	left:2px;
+	font-weight:500;	
 }
 .repetitor div span{
 	display:flex;
 	flex-direction:row;
-	margin-top:0px;
+	margin-top:10px;
 }
 .repetitor div span i{
-	margin-top:-17px;
+	margin-top:18px;
 }
-.repetitor div span p{
-	margin-top:-15px;
-	font-size:12px;
+.repetitor div span h4{
+	font-size:0.9rem;
+	font-weight:500;
+}
+.repetitor div .send{
+	width:200px;
+	height:45px;
+	background-color:#0051A2;
+	margin-top:-20px;
+	justify-content:center;
+	text-align:center;
+	display:flex;
+	flex-direction:row;
+}
+.repetitor div .send i{
+	color:white;
+	font-size:1.4rem;
+	margin-top:10px;
+}
+.repetitor div .send p{
+	color:white;
+	font-size:1.2rem;
+	margin-top:10px;
 }
 .head1{
 	width:250px;
@@ -131,6 +127,7 @@ nav h3{
 	left:10px;
 	display:flex;
 	flex-direction:row;
+	margin-top:30px;
 }
 .head1 i{
 	font-size:30px;
@@ -143,7 +140,7 @@ nav h3{
 }
 
 form{
-	width:80%;
+	width:100%;
 	max-width:400px;
 	height:300px;
 	background-color:transparent;
@@ -155,15 +152,17 @@ form .custom-select {
   position: relative;
   font-family: Arial;
   margin-top:20px;
+  display:inline-block;
 }
 form input[type="submit"]{
 	width:150px;
 	height:40px;
-	background-color:white;
+	background-color:skyblue;
 	margin-top:20px;
 	border:0px;
-	color:#0051A2;
+	color:white;
 	font-size:1.1rem;
+	border-radius:5px;
 }
  form .custom-select select {
   display: none; /*hide original SELECT element: */
@@ -172,6 +171,7 @@ form input[type="submit"]{
 
 .select-selected {
   background-color: #0051A2;
+  border-radius:5px;
   
 }
 

@@ -1,0 +1,122 @@
+nav{
+	width:100vw;
+	height:60px;
+	background-color:white;
+	position:absolute;
+	left:0px;
+	top:0px;
+	display:flex;
+	flex-direction:row;
+}
+body{
+	background-color:whitesmoke;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+nav div{
+	width:40px;
+	height:40px;
+	border-radius:28px;
+	background-color:transparent;
+	position:relative;
+	margin:10px;
+	justify-content:center;
+	text-align:center;
+	margin-top:17px;
+}
+nav div i{
+	font-size:35px;
+	margin-top:0px;
+	color:#0051A2;
+}
+nav .setting{
+	width:45px;
+	height:45px;
+	position:absolute;
+	right:20px;
+	top:5px;
+	justify-content:center;
+	text-align:center;
+}
+nav h3{
+	font: 1.4rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	color:#0051A2;
+}
+.pp{
+	width:100%;
+	max-width:600px;
+	height:140px;
+	background-color:transparent;
+	position:relative;
+	top:70px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	text-align:center;
+}
+.pp i{
+	font-size:1.5rem;
+	position:absolute;
+	top:10%;
+	left:0px;
+}
+.pp .picture{
+	width:120px;
+	height:120px;
+	background-color:silver;
+	border-radius:70px;
+	margin-top:10px;
+	background-size:cover !important;
+	background-position:center !important;
+}
+.pp .edit{
+	width:40px;
+	height:40px;
+	background-color:white;
+	border-radius:22px;
+	position:absolute;
+	right:20%;
+	justify-content:center;
+	text-align:center;
+}
+.fond{
+	width:100%;
+	max-width:600px;
+	height:140px;
+	background-color:white;
+}
+.information{
+	width:100%;
+	max-width:600px;
+	height:50px;
+	background-color:transparent;
+	margin-top:20px;
+	display:flex;
+	flex-direction:row;
+}
+.information i{
+	position:relative;
+	font-size:2.3rem;
+	left:5%;
+	margin-top:15px;
+}
+.information p{
+	font-size:1.2rem;
+	margin-left:10%;
+	font-weight:bold;
+}
+.information .edit1{
+	width:40px;
+	height:40px;
+	background-color:white;
+	border-radius:22px;
+	position:absolute;
+	right:05%;
+	margin-top:8px;
+	justify-content:center;
+	text-align:center;
+}

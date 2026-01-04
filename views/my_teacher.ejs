@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/my_teacher.css'/>
+    <link rel="icon" href="/icons/48x48.png" type="image/png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mon PWA">
+    <link rel="apple-touch-icon" href="/icons/192x192.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+     <nav>
+	<div onclick="window.location.href='/Parent'">
+		<i class='bx bx-chevron-left-circle'></i>
+	</div>
+	<h3>My Teacher</h3>
+     </nav>
+     <center>
+     	<section>
+     		<div>
+     			<i class='bx bx-user'></i>
+     			<p>M. TEUMA Leonel</p>
+     		</div>
+     		<div>
+     			<i class='bx bx-envelope'></i>
+     			<p style="font-size:1.1rem;margin-top:15px;">teumaleonel@gmail.com</p>
+     		</div>
+     		<div>
+     			<i class='bx bx-phone'></i>
+     			<p style="font-size:1.1rem;margin-top:15px;">+237679132064</p>
+     		</div>
+     		<div>
+     			<i class='bx bx-map'></i>
+     			<p style="font-size:1.1rem;margin-top:15px;">Nkoabang</p>
+     		</div>
+     		<div>
+     			<i class='bx bx-coin'></i>
+     			<p style="font-size:1.1rem;margin-top:15px;">1500XAF/seance</p>
+     		</div>
+     		<div>
+     			<i class='bx bx-pencil'></i>
+     			<p style="font-size:1.1rem;margin-top:15px;">Premiere/terminal D</p>
+     		</div>
+     	</section>
+     	<span style="display:flex;flex-direction:row;">
+     		<i class='bx bxs-star' style="position:relative;top:113px;font-size:1.4rem;color:#0051A2;"></i>
+     		<p style="position:relative;top:90px;font-size:1.4rem;color:#0051A2;">Evaluations</p>
+     	</span>
+     	<div class="notation">
+     		<div class="note"><p>1</p></div>
+     		<div class="note"><p>2</p></div>
+     		<div class="note"><p>3</p></div>
+     		<div class="note active"><p>4</p></div>
+     		<div class="note"><p>5</p></div>
+     	</div>
+     	<div class="drop">
+     			<i class='bx bx-trash' style="font-size:1.8rem;margin-top:15px;color:red;"></i>
+     			<p style="font-size:1.4rem;margin-top:15px;color:red;">Drop</p>
+     	</div>
+     </center>
+  </body>
+  <script src="/javascripts/view_teacher.js"></script>
+</html>

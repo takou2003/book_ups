@@ -16,6 +16,9 @@
      <nav>
 	<div style="background: url(/icons/bk.jpeg) no-repeat"></div>
 	<h3>Bookup</h3>
+	<div class="notification">
+		<i class='bx bx-notification' style="color:green;font-size:30px;margin-top:5px;position:relative;"></i>
+	</div>
 	<div class="setting" id="setting">
 		<i class='bx bx-menu' style="color:black;font-size:30px;margin-top:5px;"></i>
 	</div>
@@ -28,7 +31,7 @@
 			<p class="p1">Parent</p>
 		</span>
 	</div>
-	<div class="option">
+	<div class="option" onclick="window.location.href='/my_profil'">
 		<i class='bx bxs-user'></i>
 		<p>Mon profil</p>
 	</div>
@@ -48,7 +51,7 @@
 		<i class='bx bx-cog'></i>
 		<p>Parametres</p>
 	</div>
-	<div class="option">
+	<div class="option" onclick="window.location.href='/my_request'">
 		<i class='bx bx-list-ul'></i>
 		<p>Mes demandes</p>
 	</div>
@@ -67,7 +70,7 @@
      			<i class='bx bxs-graduation'></i>
      			<h3>Teacher's</h3>	
      		</div>
-     		<div class="list">
+     		<div class="list" onclick="window.location.href='/my_teacher'">
      			<p class="name">M. TEUMA Leonel</p>
      			<span>
      				<i class='bx bx-map'></i>

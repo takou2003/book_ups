@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/my_request.css'/>
+    <link rel="icon" href="/icons/48x48.png" type="image/png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mon PWA">
+    <link rel="apple-touch-icon" href="/icons/192x192.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+     <nav>
+	<div onclick="window.location.href='/Parent'">
+		<i class='bx bx-chevron-left-circle'></i>
+	</div>
+	<h3>My Request</h3>
+     </nav>
+     <center>
+     	<section>
+     		<div>
+     			<div class="picture" style="background:url(/images/portrait.jpeg)"></div>
+     			<div class="infos">
+     				<h3>M. KAMDEM Guy</h3>
+				<span>
+					<i class='bx bx-map'></i>
+					<p>Awae-escalier</p>
+				</span>
+				<p class="fr">Premier/Teminale C</p>
+     			</div>
+     			<div class="status">
+     				<span>
+     					<p>10:30</p>
+     					<i class='bx bx-trash'></i>
+     				</span>
+     				<div >
+     					<i class='bx bx-time' style="color:#0051A2;;font-size:20px;margin-left:1px;margin-top:10px;"></i>
+     					<p style="color:#0051A2;;margin-top:8px;">pending</p>
+     				</div>
+     			</div>
+     		</div></br>
+     		<div>
+     			<div class="picture" style="background:url(/images/nyobe.jpg)"></div>
+     			<div class="infos">
+     				<h3>M. UM Nyobe</h3>
+				<span>
+					<i class='bx bx-map'></i>
+					<p>Nkoabang</p>
+				</span>
+				<p class="fr">Seconde C</p>
+     			</div>
+     			<div class="status">
+     				<span>
+     					<p>12:30</p>
+     					<i class='bx bx-trash'></i>
+     				</span>
+     				<div >
+     					<i class='bx bx-task' style="color:#0051A2;;font-size:20px;margin-left:1px;margin-top:10px;"></i>
+     					<p style="color:#0051A2;;margin-top:8px;">accept</p>
+     				</div>
+     			</div>
+     		</div>
+     	</section>
+     </center>
+  </body>
+  <script src="/javascripts/view_teacher.js"></script>
+</html>

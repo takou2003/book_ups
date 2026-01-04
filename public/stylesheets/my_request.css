@@ -1,0 +1,146 @@
+nav{
+	width:100vw;
+	height:60px;
+	background-color:white;
+	position:absolute;
+	left:0px;
+	top:0px;
+	display:flex;
+	flex-direction:row;
+}
+body{
+	background-color:whitesmoke;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+nav div{
+	width:40px;
+	height:40px;
+	border-radius:28px;
+	background-color:transparent;
+	position:relative;
+	margin:10px;
+	justify-content:center;
+	text-align:center;
+	margin-top:17px;
+}
+nav div i{
+	font-size:35px;
+	margin-top:0px;
+	color:#0051A2;
+}
+nav .setting{
+	width:45px;
+	height:45px;
+	position:absolute;
+	right:20px;
+	top:5px;
+	justify-content:center;
+	text-align:center;
+}
+nav h3{
+	font: 1.4rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	color:#0051A2;
+}
+section{
+	width:100%;
+	max-width:600px;
+	height:300px;
+	background-color:transparent;
+	position:relative;
+	top:80px;
+}
+section div{
+	width:100%;
+	height:60px;
+	background-color:white;
+	display:flex;
+	flex-direction:row;
+	position:relative;
+	border-radius:5px;
+	
+}
+section div .picture{
+	width:48px;
+	height:48px;
+	background-color:white;
+	border-radius:25px;
+	top:6px;
+	left:03px;
+	background-size:cover !important;
+	background-position:center !important;
+}
+section div .infos{
+	height:100%;
+	width:50%;
+	background-color:transparent;
+	left:10px;
+	top:0;
+	display:flex;
+	flex-direction:column;
+}
+section div .infos h3{
+	font-size:100%;
+	margin-top:5px;
+	color:#0051A2;
+	position:absolute;
+	left:4%;
+}
+section div .infos  span{
+	display:flex;
+	flex-direction:row;
+	position:relative;
+	top:7px;
+	left:2%;
+	
+}
+section div .infos  span p{
+	font-size:1.0rem;
+}
+section div .infos  span i{
+	margin-top:17px;
+}
+section div .infos .fr{
+	position:absolute;
+	left:4%;
+	top:25px;
+}
+
+section div .status{
+	width:28%;
+	height:100%;
+	top:0;
+	background-color:transparent;
+	position:absolute;
+	right:2px;
+	display:flex;
+	flex-direction:column;
+}
+section div .status span{
+	display:flex;
+	flex-direction:row;
+	margin-left:20px;
+}
+section div .status span i{
+	font-size:20px;
+	margin-left:10px;
+}
+section div .status p{
+	margin-top:0px;
+	color:#0051A2;
+}
+section div .status div{
+	width:100%;
+	height:67% !important;
+	background-color:transparent;
+	position:absolute;
+	top:20px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	text-align:center; 
+}

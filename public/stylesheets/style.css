@@ -6,7 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
-
+p{
+	font: 1.4rem "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	color:#0051A2;
+}
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;
