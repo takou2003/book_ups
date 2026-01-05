@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/parent_profil.css'/>
+    <link rel="icon" href="/icons/48x48.png" type="image/png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mon PWA">
+    <link rel="apple-touch-icon" href="/icons/192x192.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+  	.notification div{
+  		width:18px;
+  		height:18px;
+  		background-color:#0051A2;
+  		border-radius:15px;
+  		position:absolute;
+  		top:-7px;
+  		left:15px;
+  		justify-content:center;
+  		text-align:center;
+  	}
+  	.notification div p{
+  		font-size:12px;
+  		margin-top:0px;
+  		color:white;
+  		font-weight:bold;
+  	}
+  </style>
+  <body>
+     <nav>
+	<div style="background: url(/icons/bk.jpeg) no-repeat"></div>
+	<h3>Bookup</h3>
+	<div class="notification" onclick="window.location.href='/Recommandation'">
+		<i class='bx bx-bell' style="color:#0051A2;font-size:30px;margin-top:5px;position:relative;"></i>
+		<div><p>2</p></div>
+	</div>
+	<div class="setting" id="setting">
+		<i class='bx bx-menu' style="color:black;font-size:30px;margin-top:5px;"></i>
+	</div>
+     </nav>
+     <div class="manipulation" id="other" style="height:300px;">
+	<div class="profil">
+		<div style="background: url(/images/e0.avif) no-repeat"></div>
+		<span>
+			<p class="p2">OBAMA M.</p>
+			<p class="p1">Teacher</p>
+		</span>
+	</div>
+	<div class="option" onclick="window.location.href='/my_profil'">
+		<i class='bx bxs-user'></i>
+		<p>Mon profil</p>
+	</div>
+	<div class="option">
+		<i class='bx bxs-star'></i>
+		<p>Mes evaluations</p>
+	</div>
+	<div class="option">
+		<i class='bx bx-cog'></i>
+		<p>Parametres</p>
+	</div>
+	<div class="option">
+		<i class='bx bx-error-alt'></i>
+		<p>Signaler un problemes</p>
+	</div>
+	<div class="option">
+		<i class='bx bx-log-out' style="color:red"></i>
+		<p style="color:red">Se deconnecter</p>
+	</div>
+     </div> 
+  </body>
+  <script src="/javascripts/parent_profil.js"></script>
+</html>

@@ -27,4 +27,13 @@ router.get('/my_profil', function(req, res, next) {
 router.get('/sign_in', function(req, res, next) {
   res.render('sign_in', { title: 'sign_in' });
 });
+router.get('/Teacher', function(req, res, next) {
+  res.render('teacher_profil', { title: 'Teacher' });
+});
+router.get('/teacher_info', function(req, res, next) {
+  res.render('teacher_info', { title: 'teacher_info' });
+});
+router.get('/Recommandation', function(req, res, next) {
+  res.render('recommandation', { title: 'recommandation' });
+});
 module.exports = router;

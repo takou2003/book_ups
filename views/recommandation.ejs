@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/my_request.css'/>
+    <link rel='stylesheet' href='/stylesheets/recommandation.css'/>
+    <link rel="icon" href="/icons/48x48.png" type="image/png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mon PWA">
+    <link rel="apple-touch-icon" href="/icons/192x192.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+     <nav>
+	<div onclick="window.location.href='/Teacher'">
+		<i class='bx bx-chevron-left-circle'></i>
+	</div>
+	<h3>My Recommandation</h3>
+     </nav>
+     <center>
+     	<section class="list_receive">
+     		<div>
+     			<div class="picture" style="background: url(/images/e0.avif) no-repeat"></div>
+     			<div class="infos">
+     				<p>Mme OBAMA M </p>
+     				<p>Terminale C</p>
+     				<p>Nkoabang</p>
+     			</div>
+     			<div class="reponse" >
+     				<div style="background:green;">
+     					<i class='bx bx-check-square' style="color:white;"></i>
+     					<p>Agree</p>
+     				</div>
+     				<div>
+     					<i class='bx bx-trash' style="color:white;"></i>
+     					<p>Denied</p>
+     				</div>
+     			</div>
+     			<p style="position:absolute;right:2px;top:-10px; font-size:12px;">12:25</p>
+     		</div>
+     		<div>
+     			<div class="picture" style="background: url(/images/portrait.jpeg) no-repeat"></div>
+     			<div class="infos">
+     				<p>Mme OBAMA M </p>
+     				<p>Terminale C</p>
+     				<p>Nkoabang</p>
+     			</div>
+     			<div class="reponse" >
+     				<div style="background:green;">
+     					<i class='bx bx-check-square' style="color:white;"></i>
+     					<p>Agree</p>
+     				</div>
+     				<div>
+     					<i class='bx bx-trash' style="color:white;"></i>
+     					<p>Denied</p>
+     				</div>
+     			</div>
+     			<p style="position:absolute;right:2px;top:-10px; font-size:12px;">12:25</p>
+     		</div>
+     	</section>
+     </center>
+  </body>
+  <script src="/javascripts/view_teacher.js"></script>
+</html>

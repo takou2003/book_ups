@@ -1,0 +1,70 @@
+.list_receive{
+	width:100%;
+	max-width:600px;
+	height:300px;
+	background-color:transparent;
+	position:relative;
+	top:80px;
+}
+.list_receive div{
+	width:100%;
+	height:70px;
+	background-color:white;
+	border-radius:0px;
+	margin-top:5px;
+	border-radius:5px;
+	display:flex;
+	flex-direction:row;
+}
+.list_receive div .picture{
+	width:50px;
+	height:50px;
+	background-color:gray;
+	border-radius:25px;
+	background-size:cover !important;
+	background-position:center !important;
+}
+.list_receive div .infos{
+	display:flex;
+	flex-direction:column;
+	height:70px;
+	width:45%;
+
+}
+.list_receive div .infos p{
+	margin:2px;
+	text-align:left;
+	color:#0051A2;
+}
+.list_receive div .reponse{
+	width:25%;
+	height:70px;
+	margin-top:0px;
+	display:flex;
+	flex-direction:column;
+	
+}
+.list_receive div .reponse div{
+	width:100%;
+	height:30px;
+	background-color:#0051A2;
+	border-radius:0px;
+	position:relative;
+	top:-2.5px;
+	border-radius:5px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	text-align:center;
+}
+.list_receive div .reponse div i{
+	position:absolute;
+	left:2px;
+	top:5px;
+}
+.list_receive div .reponse div p{
+	margin-top:3px;
+	font-size:1rem;
+	color:white;
+	margin-left:3px;
+}
