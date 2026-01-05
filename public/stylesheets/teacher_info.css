@@ -1,67 +1,17 @@
-nav{
-	width:100vw;
-	height:60px;
-	background-color:white;
-	position:absolute;
-	left:0px;
-	top:0px;
-	display:flex;
-	flex-direction:row;
-}
-body{
-	background-color:whitesmoke;
-}
-html {
-    font-family: 'Roboto', sans-serif;
-}
-
-
-nav div{
-	width:40px;
-	height:40px;
-	border-radius:28px;
-	background-color:transparent;
-	position:relative;
-	margin:10px;
-	justify-content:center;
-	text-align:center;
-	margin-top:17px;
-}
-nav div i{
-	font-size:35px;
-	margin-top:0px;
-	color:#0051A2;
-}
-nav .setting{
-	width:45px;
-	height:45px;
-	position:absolute;
-	right:20px;
-	top:5px;
-	justify-content:center;
-	text-align:center;
-}
-nav h3{
-	font: 1.4rem "Lucida Grande", Helvetica, Arial, sans-serif;
-	font-weight:bold;
-	color:#0051A2;
-}
 .picture{
 	width:170px;
 	height:170px;
 	background-color:white;
-	margin-top:100px;
+	margin-top:0px;
 	border-radius:100px;
 	justify-content:center;
-	
 }
 .picture div{
 	width:140px;
 	height:140px;
 	background-color:gray;
 	border-radius:90px;
-	top:14px;
-	position:relative;
+	top:15px;
 	background-position: center !important;
 	background-size:cover !important;
 }
@@ -71,10 +21,10 @@ nav h3{
 	height:40px;
 	background-color:#0051A2;
 	border-radius:20px;
+	position:absolute;
+	right:12px;
 	justify-content:center;
 	text-align:center;
-	margin-top:-140px;
-	margin-left:100px;
 }
 .picture .edit i{
 	color:white;
@@ -90,6 +40,7 @@ nav h3{
 	display:flex;
 	flex-direction:row;
 	position:relative;
+	top:50px;
 }
 .information i{
 	position:relative;
@@ -111,4 +62,43 @@ nav h3{
 	margin-top:14px;
 	justify-content:center;
 	text-align:center;
+}
+.classe{
+	width:320px;
+	height:50px;
+	background-color:#0051A2;
+	margin-top:70px;
+	border-radius:5px;
+}
+.classe h3{
+	color:white;
+	position:relative;
+	top:13px;
+}
+.room{
+	width:250px;
+	height:45px;
+	background-color:white;
+	top:15px;
+	margin-top:20px;
+	border-radius:5px;
+	justify-content:center;
+	text-align:center;
+	display:flex;
+	flex-direction:row;
+}
+.room div{
+	width:35px;
+	height:35px;
+	background-color:whitesmoke;
+	border-radius:20px;
+	position:relative;
+	left:55px;
+	top:5px;
+	justify-content:center;
+	text-align:center;	
+}
+.room div i{
+	font-size:1.3rem;
+	margin-top:07px;
 }

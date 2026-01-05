@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/my_profil.css'/>
+    <link rel='stylesheet' href='/stylesheets/my_request.css'/>
+    <link rel='stylesheet' href='/stylesheets/teacher_info.css'/>
     <link rel="icon" href="/icons/48x48.png" type="image/png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -14,14 +15,14 @@
   </head>
   <body>
      <nav>
-	<div onclick="window.location.href='/Parent'">
+	<div onclick="window.location.href='/Teacher'">
 		<i class='bx bx-chevron-left-circle'></i>
 	</div>
 	<h3>My Profil</h3>
      </nav>
      <center>
      	<section class="picture">
-     		<div style="background: url(/images/portrait.jpeg) no-repeat"></div>
+     		<div style="background: url(/images/e0.avif) no-repeat"></div>
      		<div class="edit">
      			<i class='bx bx-pencil'></i>
      		</div>
@@ -53,6 +54,17 @@
      		<div class="edit1">
      			<i class='bx bx-pencil' style="color:#0051A2;font-size:1.3rem;margin-top:6px;margin-left:-5px;"></i>
      		</div>
+     	</div>
+     	<div class="classe">
+     		<h3>Classroom</h3>
+     	</div>
+     	<div class="room">
+     		<p>Terminale C</p>
+     		<div><i class='bx bx-trash'></i></div>
+     	</div>
+     	<div class="room">
+     		<p>Premiere C</p>
+     		<div><i class='bx bx-trash'></i></div>
      	</div>
      </center>
   </body>
