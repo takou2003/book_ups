@@ -2,11 +2,12 @@ nav{
 	width:100vw;
 	height:60px;
 	background-color:white;
-	position:absolute;
+	position:fixed;
 	left:0px;
 	top:0px;
 	display:flex;
 	flex-direction:row;
+	z-index:1000;
 }
 body{
 	background-color:whitesmoke;
