@@ -6,13 +6,19 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "axios": "^1.13.2",
     "compression": "^1.8.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "geoip-lite": "^1.4.10",
+    "geolocation": "^0.2.0",
     "helmet": "^8.1.0",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "node-geocoder": "^4.4.1",
+    "node-geolocation": "^1.15.14",
+    "sqlite3": "^5.1.7"
   }
 }

@@ -1,0 +1,298 @@
+<!-- Dans votre PWA (index.html ou composant similaire) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4CAF50">
+    <title>Ma PWA - Localisation</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px auto;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .coordinates {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+        .accuracy-good { color: #2e7d32; }
+        .accuracy-medium { color: #f57c00; }
+        .accuracy-poor { color: #d32f2f; }
+        .map-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #1976d2;
+            text-decoration: none;
+        }
+        .map-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📍 Localisation GPS</h1>
+        <p>Obtenez votre position exacte avec le GPS de votre appareil.</p>
+        
+        <button onclick="getLocation()">
+            <span style="font-size: 20px;">📍</span>
+            Obtenir ma position
+        </button>
+        
+        <div id="result" style="display: none;">
+            <h2>Votre position :</h2>
+            
+            <div class="coordinates">
+                <p><strong>Latitude :</strong> <span id="latitude">-</span></p>
+                <p><strong>Longitude :</strong> <span id="longitude">-</span></p>
+                <p><strong>Précision :</strong> <span id="accuracy">-</span> mètres</p>
+                <p id="accuracy-indicator"></p>
+            </div>
+            
+            <div id="address" style="margin-top: 20px;">
+                <h3>Adresse :</h3>
+                <p id="address-text">Chargement...</p>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a id="map-link" class="map-link" target="_blank">
+                    🗺️ Voir sur la carte
+                </a>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button onclick="copyCoordinates()">📋 Copier les coordonnées</button>
+                <button onclick="shareLocation()" style="background: #2196F3;">📤 Partager</button>
+            </div>
+        </div>
+        
+        <div id="error" style="color: #d32f2f; display: none; margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        async function getLocation() {
+            // Cacher les erreurs précédentes
+            document.getElementById('error').style.display = 'none';
+            
+            if (!navigator.geolocation) {
+                showError("Votre navigateur ne supporte pas la géolocalisation");
+                return;
+            }
+            
+            try {
+                const position = await new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(
+                        resolve,
+                        reject,
+                        {
+                            enableHighAccuracy: true,  // Utilise le GPS
+                            timeout: 10000,           // 10 secondes max
+                            maximumAge: 0             // Pas de cache
+                        }
+                    );
+                });
+                
+                displayLocation(position);
+                await getAddress(position.coords);
+                
+            } catch (error) {
+                handleGeolocationError(error);
+            }
+        }
+        
+        function displayLocation(position) {
+            const coords = position.coords;
+            
+            // Afficher les coordonnées
+            document.getElementById('latitude').textContent = coords.latitude.toFixed(7);
+            document.getElementById('longitude').textContent = coords.longitude.toFixed(7);
+            document.getElementById('accuracy').textContent = Math.round(coords.accuracy);
+            
+            // Indicateur de précision
+            const accuracyElem = document.getElementById('accuracy-indicator');
+            if (coords.accuracy < 20) {
+                accuracyElem.innerHTML = '✅ <strong>Précision excellente</strong> (GPS)';
+                accuracyElem.className = 'accuracy-good';
+            } else if (coords.accuracy < 100) {
+                accuracyElem.innerHTML = '⚠️ <strong>Précision moyenne</strong> (WiFi/cellulaire)';
+                accuracyElem.className = 'accuracy-medium';
+            } else {
+                accuracyElem.innerHTML = '⚠️ <strong>Précision faible</strong>';
+                accuracyElem.className = 'accuracy-poor';
+            }
+            
+            // Lien carte
+            const mapLink = document.getElementById('map-link');
+            mapLink.href = `https://www.openstreetmap.org/?mlat=${coords.latitude}&mlon=${coords.longitude}&zoom=18`;
+            mapLink.textContent = `🗺️ Voir sur OpenStreetMap (zoom 18)`;
+            
+            // Afficher le résultat
+            document.getElementById('result').style.display = 'block';
+            
+            // Envoyer au backend si nécessaire
+            sendToBackend(coords);
+        }
+        
+        async function getAddress(coords) {
+            try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${coords.latitude}&lon=${coords.longitude}&zoom=18&addressdetails=1`
+                );
+                
+                if (!response.ok) throw new Error('Erreur réseau');
+                
+                const data = await response.json();
+                
+                if (data.address) {
+                    const addr = data.address;
+                    
+                    // Construire l'adresse de manière intelligente
+                    const addressParts = [];
+                    
+                    if (addr.road) addressParts.push(addr.road);
+                    if (addr.neighbourhood) addressParts.push(`Quartier ${addr.neighbourhood}`);
+                    if (addr.suburb && addr.suburb !== addr.neighbourhood) addressParts.push(addr.suburb);
+                    if (addr.city_district) addressParts.push(`Commune ${addr.city_district}`);
+                    if (addr.postcode) addressParts.push(addr.postcode);
+                    if (addr.city) addressParts.push(addr.city);
+                    if (addr.country) addressParts.push(addr.country);
+                    
+                    const fullAddress = addressParts.join(', ');
+                    document.getElementById('address-text').textContent = fullAddress;
+                    
+                    console.log('Détails complets:', {
+                        quartier: addr.neighbourhood,
+                        commune: addr.city_district || addr.suburb,
+                        ville: addr.city || addr.town || addr.village,
+                        rue: addr.road,
+                        numero: addr.house_number,
+                        codePostal: addr.postcode,
+                        pays: addr.country
+                    });
+                } else {
+                    document.getElementById('address-text').textContent = 'Adresse non disponible';
+                }
+                
+            } catch (error) {
+                console.warn('Impossible de récupérer l\'adresse:', error);
+                document.getElementById('address-text').textContent = 'Service d\'adresse temporairement indisponible';
+            }
+        }
+        
+        function handleGeolocationError(error) {
+            let message = '';
+            
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    message = "Vous avez refusé l'accès à la géolocalisation. Autorisez-la dans les paramètres de votre navigateur.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    message = "La position n'a pas pu être déterminée (GPS désactivé ou hors service).";
+                    break;
+                case error.TIMEOUT:
+                    message = "La requête a expiré. Vérifiez votre connexion et réessayez.";
+                    break;
+                default:
+                    message = "Une erreur inconnue s'est produite.";
+            }
+            
+            showError(message);
+        }
+        
+        function showError(msg) {
+            const errorElem = document.getElementById('error');
+            errorElem.textContent = `❌ ${msg}`;
+            errorElem.style.display = 'block';
+        }
+        
+        function copyCoordinates() {
+            const lat = document.getElementById('latitude').textContent;
+            const lon = document.getElementById('longitude').textContent;
+            const text = `${lat}, ${lon}`;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Coordonnées copiées !');
+            });
+        }
+        
+        async function shareLocation() {
+            const lat = document.getElementById('latitude').textContent;
+            const lon = document.getElementById('longitude').textContent;
+            
+            const shareData = {
+                title: 'Ma position',
+                text: `Je me trouve à ${lat}, ${lon}`,
+                url: `https://maps.google.com/?q=${lat},${lon}`
+            };
+            
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    // Fallback pour les navigateurs sans Web Share API
+                    copyCoordinates();
+                }
+            } catch (error) {
+                console.log('Partage annulé:', error);
+            }
+        }
+        
+        function sendToBackend(coords) {
+            // Envoyer à votre backend Node.js si nécessaire
+            fetch('/api/location', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    latitude: coords.latitude,
+                    longitude: coords.longitude,
+                    accuracy: coords.accuracy,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(console.error);
+        }
+        
+        // Installation PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker enregistré');
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker échec:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -14,7 +14,19 @@ for (i = 0; i < l; i++) {
   for (j = 1; j < ll; j++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
+    
+    // Stocker les valeurs dans les attributs data- de l'élément
+    c.setAttribute('data-value', selElmnt.options[j].value);
+    c.setAttribute('data-text', selElmnt.options[j].innerHTML);
+    
     c.addEventListener("click", function(e) {
+        // Récupérer les valeurs depuis les attributs data-
+        var selectedValue = this.getAttribute('data-value');
+        var selectedText = this.getAttribute('data-text');
+        
+        // Afficher dans la console
+        console.log("Option choisie:", selectedValue, "-", selectedText);
+        
         var y, i, k, s, h, sl, yl;
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         sl = s.length;
@@ -29,6 +41,10 @@ for (i = 0; i < l; i++) {
               y[k].removeAttribute("class");
             }
             this.setAttribute("class", "same-as-selected");
+            
+            // Appeler une fonction personnalisée si nécessaire
+            onOptionSelected(selectedValue, selectedText);
+            
             break;
           }
         }
@@ -64,7 +80,12 @@ function closeAllSelect(elmnt) {
     }
   }
 }
-document.addEventListener("click", closeAllSelect); 
+document.addEventListener("click", closeAllSelect);
+
+// Fonction pour gérer la sélection d'option
+function onOptionSelected(value, text) {
+  console.log("✅ Ville sélectionnée : " + text + " (valeur : " + value + ")");
+}
 
 
 /*var res_bar = document.getElementById("resp");
